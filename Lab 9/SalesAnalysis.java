@@ -5,7 +5,8 @@ import java.util.Scanner;
 
 /**
  * class SalesAnalysis
- * TODO: finish writing desc
+ * SalesAnalysis class that is instantiated with a file path, has methods for processing and
+ * outputting that data to stdout and a private method to convert from a String array to a Double ArrayList
  * 
  * @author Akash Pandit (aspandit@ucsc.edu)
  * @since v1.0, 5/5/2023
@@ -53,7 +54,6 @@ class SalesAnalysis {
         for (String element: inArray) {
             total += Double.parseDouble(element);
         } 
-        System.out.println(weeklyNumber);
         weeklyNumber.add(Double.valueOf(total));
     } 
 
@@ -77,13 +77,13 @@ class SalesAnalysis {
             }
 
             // print out weekly statistics to stdout
-            System.out.println("Week" + (week + 1) + "Info");
+            System.out.println("\nWeek" + (week + 1) + "Info");
             System.out.println(String.format("Total Sales: $%,.2f", weeklyTotal));
-            System.out.print(String.format("Avg Daily Sales for Week: $%,.2f\n", weeklyTotal / DAYS_OF_WEEK));
+            System.out.println(String.format("Avg Daily Sales for Week: $%,.2f", weeklyTotal / DAYS_OF_WEEK));
             totalSales += weeklyTotal;
         }
         // print total statistics to stdout
-        System.out.println(String.format("Total Sales for all Weeks: $%,.2f", totalSales));
+        System.out.println(String.format("\nTotal Sales for all Weeks: $%,.2f", totalSales));
         System.out.println(String.format("Avg Weekly Sales: $%,.2f", totalSales / weeklyNumber.size()));
         System.out.println("Week" + (maxWeek + 1) + " had the highest amount of sales");
         System.out.println("Week" + (minWeek + 1) + " had the lowest amount of sales");
